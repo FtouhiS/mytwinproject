@@ -1,0 +1,25 @@
+<input type="text" name="c" [(ngModel)]="color">
+{{getColor()}}
+<h1 [style.color]="getColor()">{{title}}</h1>
+<p>product works!</p>
+{{product.id}}
+<p [style.color]="product.quantity==0?'red':'green'">{{product.name}}</p>
+<p [class]="product.quantity==0?'titrered':'titregreen'">{{product.name}}</p>
+{{product.price}}
+{{product.category.id}}
+{{product.category.name}}
+
+<button [disabled]="product.quantity==0" (click)="buy(product)">Buy</button>
+<br>
+{{product2.id}}
+<p [style.color]="product2.quantity==0?'red':'green'">{{product2.name}}</p>
+<p [class]="product2.quantity==0?'titrered':'titregreen'">{{product2.name}}</p>
+{{product2.name}}
+{{product2.price}}
+{{product2.category.id}}
+{{product2.category.name}}
+
+<button [disabled]="product2.quantity==0" (click)="buy(product)">Buy</button>
+<button (click)="liker(product)">liker</button>
+<td *ngIf="like==5"> Best seller</td>
+
