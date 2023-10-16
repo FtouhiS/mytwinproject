@@ -1,1 +1,15 @@
 <p>list-fournisseur works!</p>
+<h2>Liste des Fournisseurs</h2>
+
+    <div *ngFor="let fournisseur of list">
+        <fieldset class="fournisseur-fieldset" *ngIf="fournisseur.idFournisseur<=100" [style.background-color]="fournisseur.libelle === 'hp' ? 'green' : 'yellow'"
+        (dblclick)="supprimerFournisseur(fournisseur.idFournisseur)">
+            <legend>IdFournisseur: {{ fournisseur.idFournisseur }}</legend>
+        <div class="fournisseur-details" >
+           <p [style.font-weight]="getColor(fournisseur.code)">Code: {{ fournisseur.code }}</p>    
+                
+            <p  >Libelle: {{ fournisseur.libelle }}</p>
+
+        </div>
+      </fieldset>
+    </div>

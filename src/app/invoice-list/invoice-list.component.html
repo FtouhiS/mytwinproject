@@ -1,0 +1,18 @@
+<tbody>
+    <tr *ngFor="let invoice of ListInvoices">
+      <td>{{ invoice.idFacture }}</td>
+      <td>{{ invoice.montantFacture }}</td>
+      <td>{{ invoice.montantRemise }}</td>
+      <td>{{ invoice.dateFacture }}</td>
+      <td>
+        <span *ngIf="invoice.active; else inactiveStatus">Yes</span>
+        <ng-template #inactiveStatus>No</ng-template>
+      </td>      
+        <td>
+            <a [routerLink]="['/invoice']" [queryParams]="{ id: invoice.idFacture, active: invoice.active }">Details</a>
+          </td>
+          
+     
+    </tr>
+  </tbody>
+  
